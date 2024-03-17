@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <h2>Veículos</h2>
+
+    <div class="botao-adicionar">
+        <!-- Botão para mostrar o modal -->
+        <button type="button" class="btn btn-primary btn-sm" (click)="openModal()">Adicionar Veículo</button>
+    </div>
+
+    <!-- Modal de adição de veículo -->
+    <div class="modal" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adicionarVeiculoModalLabel">Adicionar Veículo</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulário de adição de veículo -->
+                    <form (submit)="adicionarVeiculo()">
+                        <div class="form-group">
+                            <label for="placa">Placa:</label>
+                            <input type="text" class="form-control" id="placa" name="placa"
+                                [(ngModel)]="novoVeiculo.placa" required>
+
+                            <label for="placa">Chassi:</label>
+                            <input type="text" class="form-control" id="chassi" name="chassi"
+                                [(ngModel)]="novoVeiculo.chassi" required>
+
+                            <label for="placa">Renavam:</label>
+                            <input type="text" class="form-control" id="renavam" name="renavam"
+                                [(ngModel)]="novoVeiculo.renavam" required>
+
+                            <label for="placa">Modelo:</label>
+                            <input type="text" class="form-control" id="modelo" name="modelo"
+                                [(ngModel)]="novoVeiculo.modelo" required>
+
+                            <label for="placa">Marca:</label>
+                            <input type="text" class="form-control" id="marca" name="marca"
+                                [(ngModel)]="novoVeiculo.marca" required>
+
+                            <label for="placa">Ano:</label>
+                            <input type="text" class="form-control" id="ano" name="ano" [(ngModel)]="novoVeiculo.ano"
+                                required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">@if (!novoVeiculo.id) {Adicionar} @else {Salvar}</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="onCloseHandled()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-sm table-striped table-bordered table-hover">
+            <caption>Veículos cadastrados</caption>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Chassi</th>
+                    <th scope="col">Renavam</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Ano</th>
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let veiculo of veiculos">
+                    <td>{{veiculo.id}}</td>
+                    <td>{{veiculo.placa}}</td>
+                    <td>{{veiculo.chassi}}</td>
+                    <td>{{veiculo.renavam}}</td>
+                    <td>{{veiculo.modelo}}</td>
+                    <td>{{veiculo.marca}}</td>
+                    <td>{{veiculo.ano}}</td>
+                    <td>
+                        <!-- Links ou ícones para as ações de detalhes, alterar e excluir -->
+                        <a href="javascript:void(0)" (click)="verDetalhes(veiculo)">Detalhes/Alterar | </a>
+                        <a href="javascript:void(0)" (click)="excluirVeiculo(veiculo)">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
