@@ -1,27 +1,26 @@
-# Frontend
+## Pré-requisitos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+Antes de iniciar, certifique-se de ter o seguinte instalado em sua máquina:
 
-## Development server
+- Node.js: [Baixar e Instalar](https://nodejs.org/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalação
 
-## Code scaffolding
+1. Clone este repositório:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`git clone https://github.com/gercyc/frontend.git`
 
-## Build
+2. Navegue até o diretório da aplicação:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`cd frontend`
 
-## Running unit tests
+3. Instale as dependências:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`npm install`
 
-## Running end-to-end tests
+4. Certifique-se que está no diretório da aplicação e execute:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`ng serve`
 
-## Further help
+A aplicação está acessível na URL: [http://localhost:4200/](http://localhost:4200/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
